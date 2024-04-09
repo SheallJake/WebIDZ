@@ -55,6 +55,32 @@ function resetAutoSlide() {
   stopAutoSlide();
   startAutoSlide();
 }
+document.addEventListener('DOMContentLoaded', (event) => {
+    let tabs = document.querySelectorAll('.tabs__item');
+    let tabsContent = document.querySelectorAll('.tabs__block');
+
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            let activeTabIndex = [...tabs].indexOf(tab);
+            setActiveTab(activeTabIndex);
+        });
+    });
+
+    function setActiveTab(activeTabIndex) {
+        tabs.forEach((tab, i) => {
+            if (i === activeTabIndex) {
+                tab.classList.add('active');
+                tabsContent[i].style.display = 'block';
+            } else {
+                tab.classList.remove('active');
+                tabsContent[i].style.display = 'none';
+            }
+        });
+    }
+
+    // Set the first tab as active initially
+    setActiveTab(0);
+});
 
 startAutoSlide();
 updateSlider();
