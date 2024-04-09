@@ -77,8 +77,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         });
     }
-
-    // Set the first tab as active initially
     setActiveTab(0);
 });
 
