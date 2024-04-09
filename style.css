@@ -43,7 +43,10 @@ footer {
 .footer_p {
   color: #FFF;
 }
+.volkswagen{
+  color: white;
 
+}
 ul {
   list-style-type: none;
 }
@@ -352,4 +355,40 @@ margin-left:5px;
 justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+@media screen and (max-width: 800px) {
+  .footer_p {
+    font-size: 16px;
+  }
+  .volkswagen{
+    font-size: 16px;
+  }
+}
+
+/* Even smaller font size for screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  .footer_p {
+    font-size: 14px;
+  }
+    .volkswagen {
+      font-size: 14px;
+    }
+}
+/* Default font size for large screens */
+.tabs__item {
+  font-size: 20px;
+}
+
+/* Smaller font size for screens less than 800px wide */
+@media screen and (max-width: 800px) {
+  .tabs__item {
+    font-size: 16px;
+  }
+}
+
+/* Even smaller font size for screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  .tabs__item {
+    font-size: 14px;
+  }
 }
