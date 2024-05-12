@@ -1,0 +1,50 @@
+header {
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.logo-img {
+    width: 15%;
+}
+
+.head-nav {
+    position: absolute;
+    right: 10%;
+}
+
+.nav-line {
+    content: " ";
+    width: 1px;
+    height: 100%;
+    background-color: white;
+}
+
+.head-nav-ul {
+    display: flex;
+    align-items: center;
+}
+
+.head-nav-elem {
+    list-style-type: none;
+    display: inline-flex;
+    font-family: "Julius Sans One", sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    height: 50px;
+    align-items: center;
+}
+
+.link-text {
+    text-decoration: none;
+    color: white;
+    margin-inline: 20px;
+}

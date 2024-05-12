@@ -1,100 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/wheel_white.png" type="image/x-icon">
-    <link type="image/png" sizes="16x16" rel="icon" href="img/icon.png">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/slider.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
-    
-    <title>Steerling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
+
 <body>
-       <header> <!-- Р. Міщенко -->
-            <a class="logo" href=""><img class="logo-img" src="img/logo.png" alt=""></a>
-            <div class="headtext"> ZaporAuto </div>
-            <section class="top-nav">
-                <input id="menu-toggle" type="checkbox" />
-                <label class='menu-button-container' for="menu-toggle">
-                    <div class="circle"></div>
-                <div class='menu-button'></div>
-                </label>
-                <ul class="menu">
-                <li class="menu-point">Кари Каричі</li>
-                <li class="menu-point">Спорткари</li>
-                <li class="menu-point">Суперкари</li>
-                <li class="menu-point">Електрокари</li>
-                <li class="menu-point">Кар</li>
+    <header>
+        <div class="header-content">
+            <div class="logo"> <img src="img/logo.png" class="logo-img"></div>
+            <nav class="head-nav">
+                <ul class="head-nav-ul">
+                    <li class="head-nav-elem"><a class="link-text" href="#">Home</a></li>
+                    <li class="head-nav-elem"><a class="link-text" href="#">Our Cars</a></li>
+                    <li class="head-nav-elem"><a class="link-text" href="#">Special Offers</a></li>
+                    <li class="head-nav-elem"><a class="link-text" href="#">Services</a></li>
+                    <li class="head-nav-elem"><a class="link-text" href="#">Pages</a></li>
+                    <li class="head-nav-elem">
+                        <div class="nav-line"></div>
+                    </li>
+                    <li class="head-nav-elem"><a class="link-text" href="#">Location</a></li>
+
                 </ul>
-            </section>
-       </header>
-        <div class="slider-container">
-            <div class="slider">
-                <img src="img/image1.jpg" alt="auto1">
-                <img src="img/image2.jpg" alt="auto2">
-                <img src="img/image3.jpg" alt="auto3">
-            </div>
-            <button class="prev-button" aria-label="next">&lt;</button>
-            <button class="next-button" aria-label="prev">&gt</button>
-        </div>
-       <div class="vitrina">   
-
-
-        <div class="auto"><img class="auto-img" src="img/auto1.jpg" alt=""> <div class="auto-text">Car1</div> </div>
-        <div class="auto"><img class="auto-img" src="img/auto2.jpg" alt=""> <div class="auto-text">Car2</div> </div>
-        <div class="auto"><img class="auto-img" src="img/auto3.jpg" alt=""> <div class="auto-text">Car3</div> </div>
-        <div class="auto"><img class="auto-img" src="img/auto4.jpg" alt=""> <div class="auto-text">Car4</div> </div>
-        <div class="auto"><img class="auto-img" src="img/auto1.jpg" alt=""> <div class="auto-text">Car1</div> </div>
-        <div class="auto"><img class="auto-img" src="img/auto2.jpg" alt=""> <div class="auto-text">Car2</div> </div>
-        <div class="auto"><img class="auto-img" src="img/auto3.jpg" alt=""> <div class="auto-text">Car3</div> </div>
-        <div class="auto"><img class="auto-img" src="img/auto4.jpg" alt=""> <div class="auto-text">Car4</div> </div>
-        <div class="auto"><img class="auto-img" src="img/auto1.jpg" alt=""> <div class="auto-text">Car1</div> </div>
-        <div class="auto"><img class="auto-img" src="img/auto2.jpg" alt=""> <div class="auto-text">Car2</div> </div>
-        <div class="auto"><img class="auto-img" src="img/auto3.jpg" alt=""> <div class="auto-text">Car3</div> </div>
-        <div class="auto"><img class="auto-img" src="img/auto4.jpg" alt=""> <div class="auto-text">Car4</div> </div>
-       </div>
-       <footer>
-        <p class="volkswagen">
-            Volkswagen Das Auto</p>
-       
-        <div class="tabs">
-            <nav class="tabs__items">
-                <a href="#tab_01" class="tabs__item"><span>Про сайт</span></a>
-                <a href="#tab_02" class="tabs__item"><span>Контакти</span></a>
-                <a href="#tab_03" class="tabs__item"><span>Спонсори</span></a>
             </nav>
-            <div class="tabs__body">
-                <div  class="tabs__block">
-                    <p class="footer_p">I`m a Ferrari. I go vrooom. WROOOM&#128168;</p>
-                </div>
-                <div class="tabs__block">
-                    <div class="footer_content">
-                    <div class="Emails"><p class="footer_p">Email:</p>
-                    <ul>
-                        <li> <a class="email" href="mailto:homurgin@gmail.com">>homurgin@gmail.com</a></li>
-                        <li> <a class="email" href="mailto:mr.galaxy2325@gmail.com">>mr.galaxy2325@gmail.com</a></li>
-                    </ul>
-                </div>
-                <div class="Telephones"><p class="footer_p">Telephone:</p>
-                    <ul>
-                        <li> <a class="email" href="tel: +380953088207">>+380 95 308 82 07</a></li>
-                        <li> <a class="email" href="tel: +380638728309">>+380 63 872 83 09</a></li>
-                    </ul>
-                </div>
-                </div>
-            </div>
-                <div class="tabs__block">
-                   <p class="footer_p">Конфісковані машини.</p>
-                </div>
-            </div>
+
         </div>
-       </footer><!-- В.Тарабан -->
-    <script src="script.js"></script>
+    </header>
+
+    <main>
+        <div id="cont" class="cont">
+            <div></div>
+            <div class="slider">
+                <div data-target="1" class="slide slide--1">
+                    <p></p>
+                    <div class="slide__darkbg slide--1__darkbg"></div>
+                </div>
+                <div data-target="2" class="slide slide--2">
+                    <div class="slide__darkbg slide--2__darkbg"></div>
+                </div>
+                <div data-target="3" class="slide slide--3">
+                    <div class="slide__darkbg slide--3__darkbg"></div>
+                </div>
+                <div data-target="4" class="slide slide--3">
+                    <div class="slide__darkbg slide--3__darkbg"></div>
+                </div>
+                <div data-target="5" class="slide slide--4">
+                    <div class="slide__darkbg slide--4__darkbg"></div>
+                </div>
+            </div>
+            <ul class="nav">
+
+        </div>
+    </main>
+
+
+    <footer></footer>
 </body>
+
+<script src="scripts/slider.js"></script>
+
 </html>

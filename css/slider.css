@@ -1,0 +1,242 @@
+.cont {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.slider {
+	position: relative;
+	height: 100%;
+	transform: translate3d(0, 0, 0);
+	will-change: transform;
+	cursor: all-scroll;
+	user-select: none;
+}
+
+.slider.animation {
+	transition: transform 750ms ease-in-out;
+}
+
+.slider.animation .slide__darkbg {
+	transition: transform 750ms ease-in-out;
+}
+
+.slider.animation .slide__text {
+	transition: transform 750ms ease-in-out;
+}
+
+.slider.animation .slide__letter {
+	transition: transform 750ms ease-in-out;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.slide--1 {
+	top: 0%;
+}
+
+.slide--2 {
+	top: 100%;
+}
+
+.slide--3 {
+	top: 200%;
+}
+
+.slide--4 {
+	top: 300%;
+}
+
+.slide--5 {
+	top: 400%;
+}
+
+.slide__darkbg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	transform: translate3d(0, 0, 0);
+	will-change: transform;
+	z-index: 1;
+}
+
+
+.slide--1__darkbg {
+	left: 0%;
+	background: url("/img/1.jpg") center center no-repeat;
+	background-size: cover;
+	background-position: 0px center, 0px center;
+	transform: translate3d(0, 0, 0);
+	will-change: transform;
+}
+
+.slide--1__darkbg:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(11, 15, 39, 0.2);
+}
+
+
+.slide--2__darkbg {
+	top: -50%;
+	background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/city--2-min-min.jpg") center center no-repeat;
+	background-size: cover;
+	background-position: 0px center, 0px center;
+	transform: translate3d(0, 0, 0);
+	will-change: transform;
+}
+
+.slide--2__darkbg:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(11, 15, 39, 0.83);
+}
+
+
+.slide--3__darkbg {
+	top: -100%;
+	background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/city--3-min-min.jpg") center center no-repeat;
+	background-size: cover;
+	background-position: 0px center, 0px center;
+	transform: translate3d(0, 0, 0);
+	will-change: transform;
+}
+
+.slide--3__darkbg:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(11, 15, 39, 0.83);
+}
+
+
+.slide--4__darkbg {
+	top: -150%;
+	background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/city--4-min-min.jpg") center center no-repeat;
+	background-size: cover;
+	background-position: 0px center, 0px center;
+	transform: translate3d(0, 0, 0);
+	will-change: transform;
+}
+
+.slide--4__darkbg:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(11, 15, 39, 0.83);
+}
+
+
+.slide--5__darkbg {
+	top: -200%;
+	background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/city--5-min-min.jpg") center center no-repeat;
+	background-size: cover;
+	background-position: 0px center, 0px center;
+	transform: translate3d(0, 0, 0);
+	will-change: transform;
+}
+
+.slide--5__darkbg:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(11, 15, 39, 0.83);
+}
+
+
+.nav {
+	position: absolute;
+	bottom: 45%;
+	right: 0%;
+	transform: translateX(-50%);
+	list-style-type: none;
+	z-index: 2;
+}
+
+.nav__slide {
+	position: relative;
+	/* display: inline-block; */
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	/* margin-left: 10px; */
+	cursor: pointer;
+	margin: 10px;
+}
+
+@media screen and (max-width: 400px) {
+	.nav__slide {
+		width: 22px;
+		height: 22px;
+	}
+}
+
+.nav__slide:hover:after {
+	transform: translate(-50%, -50%) scale(1, 1);
+	opacity: 1;
+}
+
+.nav__slide:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0, 0);
+	width: 75%;
+	height: 75%;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: 0;
+	transition: 300ms;
+}
+
+
+.nav-active:after {
+	transform: translate(-50%, -50%) scale(1, 1);
+	opacity: 1;
+}
+
+
+html {
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #000;
+	overflow: hidden;
+}
