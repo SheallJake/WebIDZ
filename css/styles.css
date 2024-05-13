@@ -44,15 +44,24 @@ header {
     height: 50px;
     align-items: center;
     margin-inline: 1px;
+    transition: 0.3s;
 }
-
+/*.head-nav-elem:hover {
+    border: 0px;
+    border-radius: 15px;
+    box-shadow: 0 0 17px 8px rgba(255, 255, 255, 0.559) inset, 0 0 20px 9px rgba(255, 255, 255, 0.688);
+}
+*/
 .link-text {
     text-decoration: none;
     color: white;
     margin-inline: 20px;
 }
-
-
+.link-text:hover{
+    border-radius: 5px;
+    box-shadow: 0 0 17px 1px rgba(255, 255, 255, 0.718) inset, 0 0 20px 7px rgba(255, 255, 255, 0.751);
+    transition: 0.3s;
+}
 /* /////////////////////////////////////// */
 /* Login Modal */
 
