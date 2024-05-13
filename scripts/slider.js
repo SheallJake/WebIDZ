@@ -11,7 +11,6 @@ $(document).ready(function () {
 	let diff = 0;
 
 	const bulletsCount = $('.slider').children().length;
-	console.log(bulletsCount);
 	// Generating slides
 	let generateBullets = function (bulletsAmount) {
 		for (let i = 1; i <= bulletsAmount; i++) {
@@ -83,7 +82,7 @@ $(document).ready(function () {
 		$(document).on('mousemove touchmove', function (e) {
 			let y = e.pageY || e.originalEvent.touches[0].pageY;
 			diff = startY - y;
-			if (target === 1 && diff < 0 || target === numOfCities && diff > 0) return;
+			if (target === 1 && diff < 0 || target === bulletsCount && diff > 0) return;
 
 			$slider.css({
 				'transform': 'translate3d(0, -' + ((curSlide - 1) * 100 + (diff / 30)) + '%, 0)'

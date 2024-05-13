@@ -15,6 +15,46 @@
 </head>
 
 <body>
+    <!-- Sign Up - Login -->
+
+
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+                <span class="close">&times;</span>
+                <h2>Register</h2>
+                <input type="text" placeholder="Full Name *" required />
+                <input type="text" placeholder="Username *" required />
+                <input type="email" placeholder="Email *" required />
+                <input type="password" placeholder="Password *" required />
+                <button class="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Create
+                </button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+            </form>
+            <form id="login-form" class="login-form">
+                <span class="close">&times;</span>
+                <h2></i> Login</h2>
+                <input id="username" type="text" placeholder="Username" required />
+                <input id="password" type="password" placeholder="Password" required />
+                <button class="btn" type="submit">
+                    Sign in
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
+            </form>
+        </div>
+    </div>
+
+
+
     <header>
         <div class="header-content">
             <div class="logo"> <img src="img/logo.png" class="logo-img"></div>
@@ -28,7 +68,9 @@
                     <li class="head-nav-elem">
                         <div class="nav-line"></div>
                     </li>
-                    <li class="head-nav-elem"><a class="link-text" href="#">Location</a></li>
+                    <li id="SignBtn" class="head-nav-elem">
+                        <div class="link-text" href="#">Sign Up</div>
+                    </li>
 
                 </ul>
             </nav>
@@ -67,5 +109,7 @@
 </body>
 
 <script src="scripts/slider.js"></script>
+<script src="scripts/aut-modal.js"></script>
+<script src="scripts/aut.js"></script>
 
 </html>
