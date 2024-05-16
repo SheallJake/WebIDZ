@@ -1,0 +1,12 @@
+[
+    {
+        "username": "user1",
+        "hashed_password": "$2y$10$1234567890abcdef1234567890abcdef1234567890"
+    },
+    {
+        "full_name": "Ruslan",
+        "username": "shealljake",
+        "email": "mr.galaxy2325@gmail.com",
+        "hashed_password": "$2y$10$i91wKlYUj\/SIYCcFTZ118uugWRrhw2F2DZLrBS3tP2EKXwELMGHhW"
+    }
+]

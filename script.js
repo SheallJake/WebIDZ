@@ -1,0 +1,64 @@
+function handleLoginForm(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get form data
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Create AJAX request
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'login.php');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    // Handle response
+    xhr.onload = function () {
+        if (xhr.status === 200) { // Success
+            const response = JSON.parse(xhr.responseText);
+            if (response.success) {
+                console.log(response);
+
+                // Login successful: Display message or redirect (implement as needed)
+                alert(response.message);
+                window.location.reload();
+            } else {
+                alert(response.message); // Example error message
+            }
+        } else {
+            console.error('Error:', xhr.statusText); // Handle errors
+        }
+    };
+
+    // Send AJAX request with form data
+    xhr.send(`username=${username}&password=${password}`);
+}
+
+
+function handleRegisterForm(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const fullName = document.getElementById('register-form').full_name.value;
+    const username = document.getElementById('register-form').username.value;
+    const email = document.getElementById('register-form').email.value;
+    const password = document.getElementById('register-form').password.value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'register.php'); // Assuming a separate register.php script for registration
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            if (response.success) {
+                // Registration successful: Display message or redirect (implement as needed)
+                alert('Registration successful! Please log in.');
+                // Optionally, switch back to the login form after successful registration
+            } else {
+                alert(response.message); // Display error message from register.php
+            }
+        } else {
+            console.error('Error:', xhr.statusText); // Handle errors
+        }
+    };
+
+    xhr.send(`full_name=${fullName}&username=${username}&email=${email}&password=${password}`);
+}

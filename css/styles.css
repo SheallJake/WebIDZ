@@ -52,6 +52,15 @@ header {
     margin-inline: 20px;
 }
 
+.logout-btn {
+    border: none;
+    background-color: transparent;
+    color: white;
+    height: 50px;
+    align-items: center;
+    margin-inline: 1px;
+}
+
 
 /* /////////////////////////////////////// */
 /* Login Modal */
@@ -277,4 +286,243 @@ h2 {
     color: #003a81;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Slide1 content */
+
+.mainpage-text {
+    z-index: 6;
+    color: white;
+}
+
+.mtext-1 {
+    position: absolute;
+    top: 33%;
+    left: 5%;
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-size: 100px;
+    font-style: italic;
+}
+
+.mtext-2 {
+    position: absolute;
+    top: 45%;
+    left: 18%;
+    font-family: "Jura", sans-serif;
+    font-weight: 100;
+    font-optical-sizing: auto;
+    font-size: 60px;
+    font-style: normal;
+}
+
+.mtext-3 {
+    width: 100%;
+    position: absolute;
+    bottom: 2%;
+    text-align: center;
+    font-family: "Jura", sans-serif;
+    font-weight: 100;
+    font-optical-sizing: auto;
+    font-size: 40px;
+    font-style: normal;
+}
+
+
+/* Slide2 content */
+
+.slide-content {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    transform: translate3d(0, 0, 0);
+    transition: transform 750ms ease-in-out;
+    will-change: transform;
+}
+
+.car-name {
+    display: grid;
+    justify-items: center;
+    position: relative;
+    z-index: 6;
+    top: 20%;
+    left: 5%;
+    height: 100px;
+    color: white;
+    grid-template-columns: 0fr 1fr 0fr;
+}
+
+.name-text {
+    font-family: "K2D", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+}
+
+
+.top-l-shape {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Enable flexbox layout */
+    color: white;
+    /* For positioning the 'l-left' div */
+}
+
+.bottom-l-shape {
+    display: flex;
+    align-items: flex-end;
+    /* Enable flexbox layout */
+    color: white;
+}
+
+.l-top {
+    width: 50px;
+    /* Adjust width as needed */
+    height: 3px;
+    background-color: white;
+    /* Adjust height as needed */
+    /* Set color */
+}
+
+.l-left {
+    width: 3px;
+    /* Adjust width as needed */
+    height: 50px;
+    /* Adjust height as needed */
+    background-color: white;
+    /* Set color */
+}
+
+.l-right {
+    width: 3px;
+    /* Adjust width as needed */
+    height: 50px;
+    /* Adjust height as needed */
+    background-color: white;
+    /* Set color */
+}
+
+.l-bottom {
+    width: 50px;
+    /* Adjust width as needed */
+    height: 3px;
+    background-color: white;
+    /* Adjust height as needed */
+    /* Set color */
+}
+
+/* backlight */
+
+.blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    background-color: black;
+
+}
+
+
+.back-light {
+    width: 100%;
+    height: 100%;
+    filter: blur(200px);
+}
+
+.triangle {
+    content: "";
+    position: absolute;
+    bottom: 15%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+    height: 30rem;
+    border-radius: 200px;
+
+    background-color: #768088;
+}
+
+
+/* Car image */
+
+.car {
+    z-index: 8;
+    position: absolute;
+    bottom: 0%;
+    /* Use percentages for bottom positioning */
+    right: 0%;
+    max-width: 80%;
+    /* Use percentages for right positioning */
+}
+
+.car-img {
+    max-width: 100%;
+    height: auto;
+    /* Use vh for image height */
+}
+
+
+/* Car info */
+
+.car-info {
+    color: white;
+    position: absolute;
+    bottom: 40%;
+    left: 5%;
+    z-index: 7;
+}
+
+.car-info-ul {
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+.price {
+    width: 100%;
+    background-color: #003ACE;
+    border-color: #003ACE;
+    border: none;
+    font-family: "Jura", sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    color: white;
+    margin-top: 10px;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+
+}
+
+.price:hover {
+    transition: ease-in-out 0.5s;
+    background: #049CE4;
+    color: #fff;
+    box-shadow: 0 0 5px #003ACE,
+        0 0 25px #003ACE,
+        0 0 50px #003ACE,
+        0 0 100px #003ACE;
+}
+
+/*Back spray*/
+
+.spray {
+    z-index: 5;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.spray-img {
+    width: 800px;
+    height: auto;
+    opacity: 0.7;
 }
