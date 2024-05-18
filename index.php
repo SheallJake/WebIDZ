@@ -1,7 +1,6 @@
 <?php
-include ('login.php');
-include ('register.php');
 require_once ('boot.php');
+require_once ('goods.php');
 ?>
 
 <!DOCTYPE html>
@@ -122,14 +121,6 @@ require_once ('boot.php');
                     <div class="slide__darkbg slide--1__darkbg"></div>
                 </div>
                 <!-- 2nd Page -->
-                <?php
-                $productsFile = file_get_contents("products.json");
-                if (!$productsFile) {
-                    echo json_encode(['success' => false, 'message' => 'Error: Could not read user data from \'products.json\'.']);
-                } else {
-                    $products = json_decode($productsFile, true);
-                }
-                ?>
 
                 <div data-target="2" class="slide slide--2">
                     <div class="slide__darkbg slide--2__darkbg"></div>
@@ -139,24 +130,24 @@ require_once ('boot.php');
                                 <div class="l-top"></div>
                                 <div class="l-left"></div>
                             </div>
-                            <h1 class="name-text"><?php echo $products[0]['name']; ?></h1>
+                            <h1 class="name-text"><?php echo $mass[0]['name']; ?></h1>
                             <div class="bottom-l-shape">
                                 <div class="l-bottom"></div>
                                 <div class="l-right"></div>
                             </div>
                         </div>
                         <div class="car">
-                            <img class="car-img" src="<?php echo $products[0]['img']; ?>">
+                            <img class="car-img" src="<?php echo $mass[0]['img']; ?>">
                         </div>
 
                         <div class="car-info">
                             <ul class="car-info-ul">
-                                <li>Engine: <?php echo $products[0]['engine']; ?></li>
-                                <li>Maximum speed: <?php echo $products[0]['speed']; ?></li>
-                                <li>Acceleration time: <?php echo $products[0]['acc_time']; ?></li>
-                                <li>Number of seats: <?php echo $products[0]['seats']; ?></li>
+                                <li>Engine: <?php echo $mass[0]['engine']; ?></li>
+                                <li>Maximum speed: <?php echo $mass[0]['speed']; ?></li>
+                                <li>Acceleration time: <?php echo $mass[0]['acc_time']; ?></li>
+                                <li>Number of seats: <?php echo $mass[0]['seats']; ?></li>
                             </ul>
-                            <button class="price"><?php echo $products[0]['price']; ?></button>
+                            <button class="price"><?php echo $mass[0]['price'], '$'; ?></button>
                         </div>
 
                         <div class="spray">

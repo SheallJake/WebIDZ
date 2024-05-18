@@ -13,6 +13,7 @@ function handleLoginForm(event) {
     // Handle response
     xhr.onload = function () {
         if (xhr.status === 200) { // Success
+            console.log(JSON.parse(xhr.responseText));
             const response = JSON.parse(xhr.responseText);
             if (response.success) {
                 console.log(response);
