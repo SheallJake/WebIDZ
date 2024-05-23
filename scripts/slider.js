@@ -94,19 +94,19 @@ $(document).ready(function () {
 	// 	})
 	// })
 
-	// $(document).on('mouseup touchend', function (e) {
-	// 	$(document).off('mousemove touchmove');
+	$(document).on('mouseup touchend', function (e) {
+		$(document).off('mousemove touchmove');
 
-	// 	if (animation) return;
+		if (animation) return;
 
-	// 	if (diff >= distOfLetGo) {
-	// 		navigateDown();
-	// 	} else if (diff <= -distOfLetGo) {
-	// 		navigateUp();
-	// 	} else {
-	// 		toDefault();
-	// 	}
-	// });
+		if (diff >= distOfLetGo) {
+			navigateDown();
+		} else if (diff <= -distOfLetGo) {
+			navigateUp();
+		} else {
+			toDefault();
+		}
+	});
 
 	$(document).on('click', '.nav__slide:not(.nav-active)', function () {
 		let target = +$(this).attr('data-target');

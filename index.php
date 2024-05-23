@@ -163,15 +163,118 @@ require_once ('goods.php');
                 </div>
                 <div data-target="3" class="slide slide--3">
                     <div class="slide__darkbg slide--3__darkbg"></div>
+                    <div class="slide-content">
+                        <div class="car-name">
+                            <div class="top-l-shape">
+                                <div class="l-top"></div>
+                                <div class="l-left"></div>
+                            </div>
+                            <h1 class="name-text"><?php echo $mass[1]['name']; ?></h1>
+                            <div class="bottom-l-shape">
+                                <div class="l-bottom"></div>
+                                <div class="l-right"></div>
+                            </div>
+                        </div>
+                        <div class="car">
+                            <img class="car-img" src="<?php echo $mass[1]['img']; ?>">
+                        </div>
+
+                        <div class="car-info">
+                            <ul class="car-info-ul">
+                                <li>Engine: <?php echo $mass[1]['engine']; ?></li>
+                                <li>Maximum speed: <?php echo $mass[1]['speed']; ?></li>
+                                <li>Acceleration time: <?php echo $mass[1]['acc_time']; ?></li>
+                                <li>Number of seats: <?php echo $mass[1]['seats']; ?></li>
+                            </ul>
+                            <button class="price"><?php echo $mass[1]['price'], '$'; ?></button>
+                        </div>
+
+                        <div class="spray">
+                            <img class="spray-img" src="img/spray/spray2.png">
+                        </div>
+                        <div class="blur">
+                            <div class="back-light">
+                                <div class="triangle"></div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
+                <div data-target="4" class="slide slide--4">
+                    <div class="slide__darkbg slide--4__darkbg"></div>
+                    <div class="slide-content">
+                        <div class="car-name">
+                            <div class="top-l-shape">
+                                <div class="l-top"></div>
+                                <div class="l-left"></div>
+                            </div>
+                            <h1 class="name-text"><?php echo $mass[2]['name']; ?></h1>
+                            <div class="bottom-l-shape">
+                                <div class="l-bottom"></div>
+                                <div class="l-right"></div>
+                            </div>
+                        </div>
+                        <div class="car">
+                            <img class="car-img" src="<?php echo $mass[2]['img']; ?>">
+                        </div>
+
+                        <div class="car-info">
+                            <ul class="car-info-ul">
+                                <li>Engine: <?php echo $mass[2]['engine']; ?></li>
+                                <li>Maximum speed: <?php echo $mass[2]['speed']; ?></li>
+                                <li>Acceleration time: <?php echo $mass[2]['acc_time']; ?></li>
+                                <li>Number of seats: <?php echo $mass[2]['seats']; ?></li>
+                            </ul>
+                            <button class="price"><?php echo $mass[2]['price'], '$'; ?></button>
+                        </div>
+
+                        <div class="spray">
+                            <img class="spray-img" src="img/spray/spray3.png">
+                        </div>
+                        <div class="blur">
+                            <div class="back-light">
+                                <div class="triangle"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div data-target="5" class="slide slide--5">
+                    <div class="slide-content">
+                        <div class="slide5-center">
+
+                            <h1>All our dreams can come true if we have the courage to pursue them.</h1>
+                            <h3>-Walt Disney</h3>
+
+                            <button class="catalog-button">Go to the catalog</button>
+                        </div>
+                        <footer>
+                            <div class="foo-contacts">
+                                <h1>NFS team:</h1>
+                                <div class="contact">
+                                    <img src="img/contacts/shealljake.jpg" alt="">
+                                    <p>SheallJake</p>
+                                </div>
+                                <hr />
+                                <div class="contact">
+                                    <img src="img/contacts/homurgin.png" alt="">
+                                    <p>Homurgin</p>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                    <div class="slide__darkbg slide--5__darkbg"></div>
+
+                </div>
+
             </div>
             <ul class="nav">
 
         </div>
     </main>
 
-
-    <footer></footer>
 </body>
 
 <script src="scripts/slider.js"></script>
