@@ -76,7 +76,7 @@ require_once ('goods.php');
             <nav class="head-nav">
                 <ul class="head-nav-ul">
                     <li class="head-nav-elem"><a class="link-text" href="#">Home</a></li>
-                    <li class="head-nav-elem"><a class="link-text" href="#">Our Cars</a></li>
+                    <li class="head-nav-elem"><a class="link-text" href="Catalog.php">Our Cars</a></li>
                     <li class="head-nav-elem"><a class="link-text" href="#">Special Offers</a></li>
                     <li class="head-nav-elem"><a class="link-text" href="#">Services</a></li>
                     <li class="head-nav-elem"><a class="link-text" href="#">Pages</a></li>
@@ -248,7 +248,9 @@ require_once ('goods.php');
                             <h1>All our dreams can come true if we have the courage to pursue them.</h1>
                             <h3>-Walt Disney</h3>
 
-                            <button class="catalog-button">Go to the catalog</button>
+                            <button class="catalog-button" onclick="location.href='catalog.php'">
+                                Go to the catalog
+                            </button>
                         </div>
                         <footer>
                             <div class="foo-contacts">

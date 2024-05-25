@@ -1,9 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:300);
 
+html {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
 header {
     width: 100%;
-    position: absolute;
-    z-index: 3;
+    position: fixed;
+    z-index: 20;
 }
 
 footer {
