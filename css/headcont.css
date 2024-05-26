@@ -1,0 +1,54 @@
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.logo-img {
+    width: 10%;
+}
+
+.head-nav {
+    position: absolute;
+    right: 5%;
+}
+
+.nav-line {
+    content: " ";
+    width: 1px;
+    height: 100%;
+    background-color: white;
+}
+
+.head-nav-ul {
+    display: flex;
+    align-items: center;
+}
+
+.head-nav-elem {
+    list-style-type: none;
+    display: inline-flex;
+    font-family: "Julius Sans One", sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    height: 50px;
+    align-items: center;
+    margin-inline: 1px;
+}
+
+.link-text {
+    text-decoration: none;
+    color: white;
+    margin-inline: 20px;
+}
+
+.logout-btn {
+    border: none;
+    background-color: transparent;
+    color: white;
+    height: 50px;
+    align-items: center;
+    margin-inline: 1px;
+}
