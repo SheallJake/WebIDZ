@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:300);
-
 html {
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
@@ -14,110 +12,79 @@ html {
     padding: 0;
 }
 
-header {
-    width: 100%;
-    position: fixed;
-    z-index: 20;
-}
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.9);
-    transition: height 0.5s ease-in-out;
-}
-
-footer:hover {
-    height: 100px;
-}
-
-footer img {
-    width: 30px;
-    margin-inline: 5px;
-    border: 1px solid white;
-}
-
-.contact {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid white;
-    padding: 5px;
-    padding-inline: 10px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: rgba(0, 0, 0, 0.8);
-
-}
-
-.foo-contacts {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    color: rgb(255, 255, 255);
-}
-
-.foo-contacts h1 {
-    color: black;
-    font-family: "Kanit", sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-
-}
-
-.foo-contacts hr {
-    width: 1px;
-    height: 80%;
-    border: none;
+body {
+    margin: 0;
+    padding: 0;
     background-color: black;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    height: -webkit-fill-available;
 }
 
-/* Slide1 content */
-
-.mainpage-text {
-    z-index: 6;
-    color: white;
-}
-
-.mtext-1 {
-    position: absolute;
-    top: 33%;
-    left: 5%;
-    font-family: "Kanit", sans-serif;
-    font-weight: 300;
-    font-size: 100px;
-    font-style: italic;
-}
-
-.mtext-2 {
-    position: absolute;
-    top: 45%;
-    left: 18%;
-    font-family: "Jura", sans-serif;
-    font-weight: 100;
-    font-optical-sizing: auto;
-    font-size: 60px;
-    font-style: normal;
-}
-
-.mtext-3 {
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 15%;
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
     width: 100%;
+    z-index: 20;
+    overflow: hidden;
+}
+
+.dark-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    z-index: 1;
+    filter: blur(3px);
+    border: none;
+
+
+
+    background: url("/img/garage.jpg") center center no-repeat;
+    background-size: cover;
+    background-position: 0px center, 0px center;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.dark-bg:after {
+    content: "";
     position: absolute;
-    bottom: 2%;
-    text-align: center;
-    font-family: "Jura", sans-serif;
-    font-weight: 100;
-    font-optical-sizing: auto;
-    font-size: 40px;
-    font-style: normal;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 
-/* Slide2 content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+    position: relative;
+    height: 85%;
+    width: 100%;
+    z-index: 12;
+    color: white;
+    padding: 20px;
+}
+
+.car-img {
+    height: 50%;
+}
+
+.car-img img {
+    height: 100%;
+    width: auto;
+}
 
 .slide-content {
     display: flex;
@@ -135,7 +102,7 @@ footer img {
     justify-items: center;
     position: relative;
     z-index: 6;
-    top: 20%;
+    top: 10%;
     left: 5%;
     height: 100px;
     color: white;
@@ -291,67 +258,6 @@ footer img {
 }
 
 .price:hover {
-    transition: ease-in-out 0.5s;
-    background: #049CE4;
-    color: #fff;
-    box-shadow: 0 0 5px #003ACE,
-        0 0 25px #003ACE,
-        0 0 50px #003ACE,
-        0 0 100px #003ACE;
-}
-
-/*Back spray*/
-
-.spray {
-    z-index: 5;
-    position: absolute;
-    top: 5%;
-    left: 5%;
-}
-
-.spray-img {
-    width: 800px;
-    height: auto;
-    opacity: 0.7;
-}
-
-/* 5 slide */
-.slide5-center {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-.slide5-center h1 {
-    text-align: center;
-    z-index: 20;
-}
-
-.slide5-center button {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.catalog-button {
-    background-color: #003ACE;
-    border-color: #003ACE;
-    border: none;
-    font-family: "Jura", sans-serif;
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-    color: white;
-    margin-top: 10px;
-    transition: ease-in-out 0.5s;
-    cursor: pointer;
-    padding-inline: 10px;
-
-}
-
-.catalog-button:hover {
     transition: ease-in-out 0.5s;
     background: #049CE4;
     color: #fff;

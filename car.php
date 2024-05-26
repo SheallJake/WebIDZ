@@ -9,7 +9,7 @@ require_once ('server_part/goods.php'); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- css -->
-    <link rel="stylesheet" href="/css/catalog.css">
+    <link rel="stylesheet" href="/css/car.css">
     <link rel="stylesheet" href="/css/loginmodal.css">
     <link rel="stylesheet" href="/css/headcont.css">
 
@@ -103,46 +103,72 @@ require_once ('server_part/goods.php'); ?>
         </div>
     </header>
 
-    <div class="catalog-title">
-        <p>Our Cars</p>
-        <?php if (isset($_SESSION['username']) && $_SESSION['logged_in']) { ?>
-            <form class="searchbox" onsubmit="event.preventDefault();" role="search" method="get" action="search.php"
-                id="search-form">
-                <input id="search" type="search" placeholder="Search..." autofocus required />
-                <button class="searchbutt" type="submit">GO</button>
-            </form>
-        <?php } ?>
-    </div>
+    <!-- Getting atributs from other pages -->
+    <?php $prd = $_GET['atr'];
+    $j = 0;
 
+    foreach ($mass as $key) {
+        if ($key['id'] == $prd) {
+            $carid = $j;
+            break;
+        }
+        $j++;
+    }
+    $car = $mass[$carid];
+    ?>
     <!-- Main content -->
     <main class="main-content">
-        <ul class="catalog-ul">
-            <?php
-            if (isset($_SESSION['username']) && $_SESSION['logged_in']) {
-                foreach ($mass as $car) {
-                    ?>
-                    <li onclick="redirectToProductPage(<?= $car['id'] ?>)" class="catalog-li">
-                        <img src="<?= $car['img'] ?>" alt="">
-                        <p><?= $car['name'] ?></p>
-                        <p class="price"><?= $car['price'] ?>$</p>
-                    </li>
-                    <?php
-                }
-            } else {
-                ?>
-                <li class="catalog-li-unlogged">
-                    <p>You must be logged in to view this page</p>
-                </li>
-                <?php
-            }
-            ?>
-        </ul>
+        <div class="slide-content">
+            <div class="car-name">
+                <div class="top-l-shape">
+                    <div class="l-top"></div>
+                    <div class="l-left"></div>
+                </div>
+
+                <h1 class="name-text"><?= $car['name']; ?></h1>
+                <div class="bottom-l-shape">
+                    <div class="l-bottom"></div>
+                    <div class="l-right"></div>
+                </div>
+            </div>
+            <div class="car">
+                <img class="car-img" src="<?= $car['img']; ?>">
+            </div>
+
+            <div class="car-info">
+                <ul class="car-info-ul">
+                    <li>Engine: <?= $car['engine']; ?></li>
+                    <li>Maximum speed: <?= $car['speed']; ?></li>
+                    <li>Acceleration time: <?= $car['acc_time']; ?></li>
+                    <li>Number of seats: <?= $car['seats']; ?></li>
+                </ul>
+                <button class="price"><?php echo $car['price'], '$'; ?></button>
+            </div>
+
+        </div>
+
     </main>
 
 
     <div class="dark-bg"></div>
 </body>
 
+<!-- Скрипт для формы поиска -->
+<script>
+    // Получаем форму по ее id
+    const form = document.getElementById('search-form');
+
+    // Обработчик события отправки формы
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Предотвращаем обычное поведение формы
+
+        // Получаем значение введенное в поле поиска
+        const searchQuery = document.getElementById('search').value;
+
+        // Перенаправляем на страницу "search.php" с передачей поискового запроса в качестве параметра
+        window.location.href = 'search.php?query=' + encodeURIComponent(searchQuery);
+    });
+</script>
 
 <script src="scripts/aut-modal.js"></script>
 <script src="scripts/script.js"></script>

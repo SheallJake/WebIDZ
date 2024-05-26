@@ -1,6 +1,7 @@
 <?php require_once ('server_part/boot.php');
 require_once ('server_part/goods.php'); ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,45 +105,45 @@ require_once ('server_part/goods.php'); ?>
     </header>
 
     <div class="catalog-title">
-        <p>Our Cars</p>
-        <?php if (isset($_SESSION['username']) && $_SESSION['logged_in']) { ?>
-            <form class="searchbox" onsubmit="event.preventDefault();" role="search" method="get" action="search.php"
-                id="search-form">
-                <input id="search" type="search" placeholder="Search..." autofocus required />
-                <button class="searchbutt" type="submit">GO</button>
-            </form>
-        <?php } ?>
+        <div> Пошук за запитом "<?php echo $_GET['query'] ?>"</div>
+        <form class="searchbox" onsubmit="event.preventDefault();" role="search" method="get" action="search.php"
+            id="search-form">
+            <input id="search" type="search" placeholder="Search..." autofocus required />
+            <button class="searchbutt" type="submit">GO</button>
+        </form>
     </div>
 
     <!-- Main content -->
     <main class="main-content">
         <ul class="catalog-ul">
             <?php
-            if (isset($_SESSION['username']) && $_SESSION['logged_in']) {
-                foreach ($mass as $car) {
-                    ?>
+            $search_success = false;
+            $query = mb_strtolower($_GET['query'], 'UTF-8');
+            foreach ($mass as $car) {
+                $tmp = mb_strtolower($car['name'], 'UTF-8');
+                if (strpos($tmp, $query) !== false) {
+                    $search_success = true; ?>
                     <li onclick="redirectToProductPage(<?= $car['id'] ?>)" class="catalog-li">
                         <img src="<?= $car['img'] ?>" alt="">
                         <p><?= $car['name'] ?></p>
                         <p class="price"><?= $car['price'] ?>$</p>
                     </li>
-                    <?php
-                }
-            } else {
+                <?php }
+                ;
+            }
+
+            if (!$search_success) {
                 ?>
-                <li class="catalog-li-unlogged">
-                    <p>You must be logged in to view this page</p>
-                </li>
+                <li class="catalog-li-unlogged">No cars found</li>
                 <?php
             }
-            ?>
+            ; ?>
         </ul>
     </main>
 
 
     <div class="dark-bg"></div>
 </body>
-
 
 <script src="scripts/aut-modal.js"></script>
 <script src="scripts/script.js"></script>

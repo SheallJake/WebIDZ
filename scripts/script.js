@@ -7,7 +7,7 @@ function handleLoginForm(event) {
 
     // Create AJAX request
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'login.php');
+    xhr.open('POST', 'server_part/login.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     // Handle response
@@ -43,7 +43,7 @@ function handleRegisterForm(event) {
     const password = document.getElementById('register-form').password.value;
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'register.php'); // Assuming a separate register.php script for registration
+    xhr.open('POST', 'server_part/register.php'); // Assuming a separate register.php script for registration
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     xhr.onload = function () {
@@ -62,4 +62,28 @@ function handleRegisterForm(event) {
     };
 
     xhr.send(`full_name=${fullName}&username=${username}&email=${email}&password=${password}`);
+}
+
+// Search
+// Получаем форму по ее id
+const form = document.getElementById('search-form');
+
+// Обработчик события отправки формы
+form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Предотвращаем обычное поведение формы
+
+    // Получаем значение введенное в поле поиска
+    const searchQuery = document.getElementById('search').value;
+
+    // Перенаправляем на страницу "search.php" с передачей поискового запроса в качестве параметра
+    window.location.href = 'search.php?query=' + encodeURIComponent(searchQuery);
+});
+
+
+// Page Redirect
+function redirectToProductPage(attribute1) {
+    var url = "car.php";
+    url += "?atr=" + attribute1;
+    console.log(url);
+    window.location.href = url;
 }

@@ -1,7 +1,5 @@
-<?php
-require_once ('boot.php');
-require_once ('goods.php');
-?>
+<?php require_once ('server_part/boot.php');
+require_once ('server_part/goods.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +11,8 @@ require_once ('goods.php');
     <!-- css -->
     <link rel="stylesheet" href="/css/slider.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/loginmodal.css">
+    <link rel="stylesheet" href="/css/headcont.css">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,14 +72,12 @@ require_once ('goods.php');
 
     <header>
         <div class="header-content">
-            <div class="logo"> <img src="img/logo.png" class="logo-img"></div>
+            <a class="logo" href="index.php"> <img src="img/logo.png" class="logo-img"></a>
             <nav class="head-nav">
                 <ul class="head-nav-ul">
-                    <li class="head-nav-elem"><a class="link-text" href="#">Home</a></li>
-                    <li class="head-nav-elem"><a class="link-text" href="Catalog.php">Our Cars</a></li>
-                    <li class="head-nav-elem"><a class="link-text" href="#">Special Offers</a></li>
-                    <li class="head-nav-elem"><a class="link-text" href="#">Services</a></li>
-                    <li class="head-nav-elem"><a class="link-text" href="#">Pages</a></li>
+                    <li class="head-nav-elem"><a class="link-text" href="index.php">Home</a></li>
+                    <li class="head-nav-elem"><a class="link-text" href="catalog.php">Our Cars</a></li>
+                    <li class="head-nav-elem"><a class="link-text" href="#">About</a></li>
                     <li class="head-nav-elem">
                         <div class="nav-line"></div>
                     </li>
@@ -88,7 +86,7 @@ require_once ('goods.php');
                     if (isset($_SESSION['username']) && $_SESSION['logged_in']) { ?>
                         <li id="user" class="head-nav-elem">
                             <div class="link-text"> <?php echo $_SESSION['username']; ?> </div>
-                            <form class="head-nav-elem" method="post" action="logout.php">
+                            <form class="head-nav-elem" method="post" action="server_part/logout.php">
                                 <button class="head-nav-elem link-text logout-btn" type="submit" class="">Log Out</button>
                             </form><?php
                     } else { ?>
@@ -104,6 +102,8 @@ require_once ('goods.php');
 
         </div>
     </header>
+
+
     <!-- Main content -->
     <main>
         <div id="cont" class="cont">
@@ -130,6 +130,7 @@ require_once ('goods.php');
                                 <div class="l-top"></div>
                                 <div class="l-left"></div>
                             </div>
+
                             <h1 class="name-text"><?php echo $mass[0]['name']; ?></h1>
                             <div class="bottom-l-shape">
                                 <div class="l-bottom"></div>
@@ -281,6 +282,6 @@ require_once ('goods.php');
 
 <script src="scripts/slider.js"></script>
 <script src="scripts/aut-modal.js"></script>
-<script src="script.js"></script>
+<script src="scripts/script.js"></script>
 
 </html>
