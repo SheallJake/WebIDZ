@@ -1,6 +1,3 @@
-<?php require_once ('server_part/boot.php');
-require_once ('server_part/goods.php'); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +8,6 @@ require_once ('server_part/goods.php'); ?>
     <!-- css -->
     <link rel="stylesheet" href="/css/slider.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/loginmodal.css">
-    <link rel="stylesheet" href="/css/headcont.css">
-    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -81,21 +75,9 @@ require_once ('server_part/goods.php'); ?>
                     <li class="head-nav-elem">
                         <div class="nav-line"></div>
                     </li>
-                    <?php
-
-                    if (isset($_SESSION['username']) && $_SESSION['logged_in']) { ?>
-                        <li id="user" class="head-nav-elem">
-                            <div class="link-text"> <?php echo $_SESSION['username']; ?> </div>
-                            <form class="head-nav-elem" method="post" action="server_part/logout.php">
-                                <button class="head-nav-elem link-text logout-btn" type="submit" class="">Log Out</button>
-                            </form><?php
-                    } else { ?>
-                        <li id="SignBtn" class="head-nav-elem">
-                            <div class="link-text">Sign In</div>
-                        </li>
-                        <?php
-                    }
-                    ?>
+                    <li id="SignBtn" class="head-nav-elem">
+                        <div class="link-text" href="#">Sign Up</div>
+                    </li>
 
                 </ul>
             </nav>
@@ -103,8 +85,6 @@ require_once ('server_part/goods.php'); ?>
         </div>
     </header>
 
-
-    <!-- Main content -->
     <main>
         <div id="cont" class="cont">
             <div></div>
@@ -124,43 +104,6 @@ require_once ('server_part/goods.php'); ?>
 
                 <div data-target="2" class="slide slide--2">
                     <div class="slide__darkbg slide--2__darkbg"></div>
-                    <div class="slide-content">
-                        <div class="car-name">
-                            <div class="top-l-shape">
-                                <div class="l-top"></div>
-                                <div class="l-left"></div>
-                            </div>
-
-                            <h1 class="name-text"><?php echo $mass[0]['name']; ?></h1>
-                            <div class="bottom-l-shape">
-                                <div class="l-bottom"></div>
-                                <div class="l-right"></div>
-                            </div>
-                        </div>
-                        <div class="car">
-                            <img class="car-img" src="<?php echo $mass[0]['img']; ?>">
-                        </div>
-
-                        <div class="car-info">
-                            <ul class="car-info-ul">
-                                <li>Engine: <?php echo $mass[0]['engine']; ?></li>
-                                <li>Maximum speed: <?php echo $mass[0]['speed']; ?></li>
-                                <li>Acceleration time: <?php echo $mass[0]['acc_time']; ?></li>
-                                <li>Number of seats: <?php echo $mass[0]['seats']; ?></li>
-                            </ul>
-                            <button class="price"><?php echo $mass[0]['price'], '$'; ?></button>
-                        </div>
-
-                        <div class="spray">
-                            <img class="spray-img" src="img/spray/spray1.png">
-                        </div>
-                        <div class="blur">
-                            <div class="back-light">
-                                <div class="triangle"></div>
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
                 <div data-target="3" class="slide slide--3">
                     <div class="slide__darkbg slide--3__darkbg"></div>
@@ -204,72 +147,6 @@ require_once ('server_part/goods.php'); ?>
 
                 <div data-target="4" class="slide slide--4">
                     <div class="slide__darkbg slide--4__darkbg"></div>
-                    <div class="slide-content">
-                        <div class="car-name">
-                            <div class="top-l-shape">
-                                <div class="l-top"></div>
-                                <div class="l-left"></div>
-                            </div>
-                            <h1 class="name-text"><?php echo $mass[2]['name']; ?></h1>
-                            <div class="bottom-l-shape">
-                                <div class="l-bottom"></div>
-                                <div class="l-right"></div>
-                            </div>
-                        </div>
-                        <div class="car">
-                            <img class="car-img" src="<?php echo $mass[2]['img']; ?>">
-                        </div>
-
-                        <div class="car-info">
-                            <ul class="car-info-ul">
-                                <li>Engine: <?php echo $mass[2]['engine']; ?></li>
-                                <li>Maximum speed: <?php echo $mass[2]['speed']; ?></li>
-                                <li>Acceleration time: <?php echo $mass[2]['acc_time']; ?></li>
-                                <li>Number of seats: <?php echo $mass[2]['seats']; ?></li>
-                            </ul>
-                            <button class="price"><?php echo $mass[2]['price'], '$'; ?></button>
-                        </div>
-
-                        <div class="spray">
-                            <img class="spray-img" src="img/spray/spray3.png">
-                        </div>
-                        <div class="blur">
-                            <div class="back-light">
-                                <div class="triangle"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div data-target="5" class="slide slide--5">
-                    <div class="slide-content">
-                        <div class="slide5-center">
-
-                            <h1>All our dreams can come true if we have the courage to pursue them.</h1>
-                            <h3>-Walt Disney</h3>
-
-                            <button class="catalog-button" onclick="location.href='catalog.php'">
-                                Go to the catalog
-                            </button>
-                        </div>
-                        <footer>
-                            <div class="foo-contacts">
-                                <h1>NFS team:</h1>
-                                <div class="contact">
-                                    <img src="img/contacts/shealljake.jpg" alt="">
-                                    <p>SheallJake</p>
-                                </div>
-                                <hr />
-                                <div class="contact">
-                                    <img src="img/contacts/homurgin.png" alt="">
-                                    <p>Homurgin</p>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
-                    <div class="slide__darkbg slide--5__darkbg"></div>
-
                 </div>
 
             </div>
@@ -282,6 +159,6 @@ require_once ('server_part/goods.php'); ?>
 
 <script src="scripts/slider.js"></script>
 <script src="scripts/aut-modal.js"></script>
-<script src="scripts/script.js"></script>
+<script src="scripts/aut.js"></script>
 
 </html>
