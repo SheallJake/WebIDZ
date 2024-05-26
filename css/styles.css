@@ -14,8 +14,24 @@ html {
     padding: 0;
 }
 
+html {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
 header {
     width: 100%;
+    position: fixed;
+    z-index: 20;
     position: fixed;
     z-index: 20;
 }
