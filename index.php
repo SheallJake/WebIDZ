@@ -73,12 +73,8 @@ require_once ('server_part/goods.php'); ?>
     <header>
         <div class="header-content">
             <a class="logo" href="index.php"> <img src="img/logo.png" class="logo-img"></a>
-            <a class="logo" href="index.php"> <img src="img/logo.png" class="logo-img"></a>
             <nav class="head-nav">
                 <ul class="head-nav-ul">
-                    <li class="head-nav-elem"><a class="link-text" href="index.php">Home</a></li>
-                    <li class="head-nav-elem"><a class="link-text" href="catalog.php">Our Cars</a></li>
-                    <li class="head-nav-elem"><a class="link-text" href="#">About</a></li>
                     <li class="head-nav-elem"><a class="link-text" href="index.php">Home</a></li>
                     <li class="head-nav-elem"><a class="link-text" href="catalog.php">Our Cars</a></li>
                     <li class="head-nav-elem"><a class="link-text" href="#">About</a></li>
