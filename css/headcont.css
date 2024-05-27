@@ -1,3 +1,4 @@
+/* Основні стилі */
 .header-content {
     width: 100%;
     display: flex;
@@ -7,12 +8,20 @@
 }
 
 .logo-img {
-    width: 10%;
+    width: 120px;
 }
 
-.head-nav {
-    position: absolute;
-    right: 5%;
+.menu-toggle-checkbox {
+    display: none;
+}
+
+.menu-toggle-label {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
 .nav-line {
@@ -36,6 +45,7 @@
     height: 50px;
     align-items: center;
     margin-inline: 1px;
+    cursor: pointer;
 }
 
 .link-text {
@@ -51,4 +61,78 @@
     height: 50px;
     align-items: center;
     margin-inline: 1px;
+    font-family: "Julius Sans One", sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Адаптивний дизайн для мобільних пристроїв */
+@media (max-width: 850px) {
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+    }
+
+    .logo-img {
+        width: 80px;
+    }
+
+    .menu-toggle-label {
+        display: block;
+    }
+
+    .head-nav {
+        width: 100%;
+        display: none;
+        opacity: 0;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        transition: opacity 0.5s;
+    }
+
+    .menu-toggle-checkbox:checked~.head-nav {
+        display: block;
+        opacity: 1;
+    }
+
+    .head-nav-ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        left: 0;
+        top: 78px;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+    }
+
+    .head-nav-elem {
+        width: 100%;
+        text-align: left;
+        margin: 10px 0;
+        border-bottom: 1px solid white;
+    }
+
+    .link-text {
+        margin-inline: 10px;
+    }
+
+    .logout-btn {
+        width: 100%;
+        text-align: center;
+        margin-inline: 10px;
+    }
+
+    #user {
+        border: none;
+        justify-content: center;
+    }
+
+    #nav-line {
+        display: none;
+    }
 }
