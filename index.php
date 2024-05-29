@@ -7,7 +7,8 @@ require_once ('server_part/goods.php'); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NFS</title>
+    <link rel="icon" href="img/logo.ico" sizes="16x16" type="image/vnd.microsoft.icon">
     <!-- css -->
     <link rel="stylesheet" href="/css/slider.css">
     <link rel="stylesheet" href="/css/styles.css">
