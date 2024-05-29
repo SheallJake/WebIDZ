@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/boot.php';
 
-//Обнуляем имя пользователя в сессии
 $_SESSION['username'] = null;
+$_SESSION['admin'] = false;
+
 header('Location: /');

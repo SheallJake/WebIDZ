@@ -65,17 +65,11 @@ function handleRegisterForm(event) {
 }
 
 // Search
-// Получаем форму по ее id
 const form = document.getElementById('search-form');
 
-// Обработчик события отправки формы
 form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Предотвращаем обычное поведение формы
-
-    // Получаем значение введенное в поле поиска
+    event.preventDefault();
     const searchQuery = document.getElementById('search').value;
-
-    // Перенаправляем на страницу "search.php" с передачей поискового запроса в качестве параметра
     window.location.href = 'search.php?query=' + encodeURIComponent(searchQuery);
 });
 
