@@ -1,6 +1,5 @@
 <?php
 include '../boot.php'; // Include PDO connection
-$pdo = pdo();
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
@@ -13,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $params = [':id' => $id];
 
     // Execute the prepared statement to delete the record
-    $stmt = $pdo->prepare($sql);
+    $stmt = pdo()->prepare($sql);
     $stmt->execute($params);
 
     // Redirect to the admin panel after deletion

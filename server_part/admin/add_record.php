@@ -1,6 +1,5 @@
 <?php
 include '../boot.php'; // Include PDO connection
-$pdo = pdo();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -23,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = rtrim($sql, ', ');
     $sql .= ')';
     // Execute the prepared statement with the collected parameters
-    $stmt = $pdo->prepare($sql);
+    $stmt = pdo()->prepare($sql);
     $stmt->execute($params);
 
     header('Location:  ./../../admin.php');

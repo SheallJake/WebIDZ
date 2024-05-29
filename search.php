@@ -73,12 +73,12 @@ require_once ('server_part/goods.php'); ?>
 
     <header>
         <div class="header-content">
-            <a class="logo" href="index.php"><img src="img/logo.png" class="logo-img"></a>
+            <a class="logo" href="/"><img src="img/logo.png" class="logo-img"></a>
             <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" aria-label="Toggle navigation menu">
             <label for="menu-toggle" class="menu-toggle-label">☰</label>
             <nav id="head-nav" class="head-nav">
                 <ul class="head-nav-ul">
-                    <li class="head-nav-elem"><a class="link-text" href="index.php">Home</a></li>
+                    <li class="head-nav-elem"><a class="link-text" href="/">Home</a></li>
                     <li class="head-nav-elem"><a class="link-text" href="catalog.php">Our Cars</a></li>
                     <li class="head-nav-elem"><a class="link-text" href="#">About</a></li>
                     <li id="nav-line" class="head-nav-elem">
@@ -87,8 +87,13 @@ require_once ('server_part/goods.php'); ?>
                     <?php if (isset($_SESSION['username']) && $_SESSION['logged_in']) { ?>
                         <li id="user" class="head-nav-elem">
                             <div class="link-text"><?php echo $_SESSION['username']; ?></div>
-                            <form method="post" action="server_part/logout.php">
-                                <button class="link-text logout-btn" type="submit">Log Out</button>
+                            <?php if ($_SESSION['admin']) { ?>
+                                <form class="link-text" action="admin.php">
+                                    <button class="logout-btn" type="submit">Admin Panel</button>
+                                </form>
+                            <?php } ?>
+                            <form class="link-text" method="post" action="server_part/logout.php">
+                                <button class="logout-btn" type="submit">Log Out</button>
                             </form>
                         </li>
                     <?php } else { ?>

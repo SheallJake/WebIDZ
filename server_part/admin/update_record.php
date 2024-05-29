@@ -1,6 +1,5 @@
 <?php
 include '../boot.php'; // Include PDO connection
-$pdo = pdo();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Prepare the SQL query with placeholders for parameters
@@ -16,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql .= ' WHERE id = :id'; // Add the WHERE clause
 
     // Execute the prepared statement with the collected parameters
-    $stmt = $pdo->prepare($sql);
+    $stmt = pdo()->prepare($sql);
     $params[':id'] = $_POST['id']; // Add the ID parameter
     $stmt->execute($params);
 

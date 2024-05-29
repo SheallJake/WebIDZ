@@ -1,3 +1,7 @@
+img {
+    pointer-events: none;
+}
+
 /* Основні стилі */
 .header-content {
     width: 100%;

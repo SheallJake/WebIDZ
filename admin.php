@@ -1,3 +1,9 @@
+<?php require_once ('server_part/boot.php');
+if (!$_SESSION['admin']) {
+    header('Location:  ./../../');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +15,12 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+        }
+
+        .top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
 
         .container {
@@ -24,6 +36,22 @@
             margin-bottom: 20px;
             display: flex;
             align-items: center;
+        }
+
+        .back-btn {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding-inline: 30px;
+            cursor: pointer;
+            height: 50%;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #d32f2f;
         }
 
         select {
@@ -88,12 +116,16 @@
 
 <body>
     <?php
-    // Пример значения переменной $aim
     $aim = isset($_GET['aim']) ? $_GET['aim'] : 'users';
     ?>
 
     <div class="container">
-        <h1>Admin Panel</h1>
+        <div class="top">
+            <h1>Admin Panel</h1>
+            <a class="back-btn" href="/">
+                <p>Back</p>
+            </a>
+        </div>
         <div class="table-select">
             <h2>Table:</h2>
             <form id="tableSelectForm" method="get" action="">
@@ -108,13 +140,10 @@
 
         <h2>Add New Record</h2>
         <?php
-        // Fetch and display existing records
-        include 'server_part/boot.php';
-        $pdo = pdo();
 
-        $stmt = $pdo->query('SELECT * FROM ' . $aim);
+        $stmt = pdo()->query('SELECT * FROM ' . $aim);
 
-        $stmt2 = $pdo->query('SELECT * FROM ' . $aim);
+        $stmt2 = pdo()->query('SELECT * FROM ' . $aim);
         $table = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>
 
@@ -146,8 +175,7 @@
             <tbody>
                 <?php
                 // Fetch and display existing records
-                $pdo = pdo();
-                $stmt2 = $pdo->query('SELECT * FROM ' . $aim);
+                $stmt2 = pdo()->query('SELECT * FROM ' . $aim);
                 while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
                     echo '<tr>';
                     foreach ($table as $key => $value) {
@@ -162,8 +190,7 @@
 
                 // Edit record
                 if (isset($_GET['id'])) {
-                    $pdo = pdo();
-                    $stmt3 = $pdo->prepare('SELECT * FROM ' . $aim . ' WHERE id = :id');
+                    $stmt3 = pdo()->prepare('SELECT * FROM ' . $aim . ' WHERE id = :id');
                     $stmt3->execute(['id' => $_GET['id']]);
 
                     $row = $stmt3->fetch(PDO::FETCH_ASSOC);
